@@ -24,7 +24,7 @@
         site_title: "GossipIt",
         site_tagline: "Get the latest gossip",
         announcement_title: "Recent Announcement",
-        announcement_text: "12/23/2025 - Merry Christmas and a Happy New Year! I went ahead and created these really cool and totally awesome snow effects. You're welcome.",
+        announcement_text: "1/23/26 - I'm sorry, but the holidays are over. This means I got rid of the snow effect :(",
         primary_color: "#333333",
         secondary_color: "#f5f5f5",
         accent_color: "#666666",
@@ -469,49 +469,6 @@
       s1.charset='UTF-8';
       s1.setAttribute('crossorigin','*');
       s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
-
-  <!-- Snowfall effect -->
-  <div id="snowfall-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden;"></div>
-  <script>
-    (function() {
-      const container = document.getElementById('snowfall-container');
-      
-      function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.textContent = '❄️';
-        snowflake.style.position = 'absolute';
-        snowflake.style.fontSize = Math.random() * 20 + 15 + 'px';
-        snowflake.style.left = Math.random() * 100 + '%';
-        snowflake.style.top = '-50px';
-        snowflake.style.opacity = Math.random() * 0.6 + 0.4;
-        snowflake.style.userSelect = 'none';
-        const duration = Math.random() * 3 + 4;
-        const drift = (Math.random() - 0.5) * 100;
-        const styleSheet = document.createElement('style');
-
-        const keyframeId = 'fall-' + Math.random().toString(36).substr(2, 9);
-        styleSheet.textContent = `
-          @keyframes ${keyframeId} {
-            to {
-              transform: translateY(calc(100vh + 50px)) translateX(${drift}px);
-            }
-          }
-        `;
-        document.head.appendChild(styleSheet);
-        snowflake.style.animation = `${keyframeId} ${duration}s linear`;
-        container.appendChild(snowflake);
-        setTimeout(() => {
-          snowflake.remove();
-          styleSheet.remove();
-        }, duration * 1000);
-      }
-      
-      setInterval(createSnowflake, 200);
-      for (let i=0; i<15; i++) {
-        setTimeout(createSnowflake, i * 100);
-      }
     })();
   </script>
 </body>
